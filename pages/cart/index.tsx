@@ -10,7 +10,6 @@ import ButtonLink from '../../components/ButtonLink/ButtonLink';
 import Button from '../../components/Button/Button';
 import CartItem from '../../components/CartItem/CartItem';
 import { HiOutlineTicket } from 'react-icons/hi';
-import { useGetSessionStorage } from '../../hooks/hooks';
 import globalStyles from './../../styles/Global.module.css';
 import styles from './../../styles/Cart.module.css';
 
@@ -33,13 +32,17 @@ import User from '../../models/User';
 import { IAddress } from '../../ts/interfaces/user';
 const JWT_SECRET = process.env.JWT_SECRET;
 
-const Cart: NextPage<{ isLoggedIn: boolean; userAddress: IAddress }> = ({
+import { useGetBusinessTime } from '../../hooks/hooks';
+
+const Cart: NextPage<{ isLoggedIn: boolean; userAddress: IAddress | null }> = ({
   isLoggedIn,
   userAddress,
 }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [showModalCupom, setShowModalCupom] = useState(false);
   const [paymentMethod, setPaymentMethod] = useState('');
+
+  const { isOpen } = useGetBusinessTime();
 
   const dispatch = useAppDispatch();
   const router = useRouter();
@@ -133,18 +136,17 @@ const Cart: NextPage<{ isLoggedIn: boolean; userAddress: IAddress }> = ({
         <div className={`${globalStyles.customBackground} ${styles.spacing}`}>
           <article className={globalStyles.container}>
             <div className={styles.innerContainer}>
-              <h4>Cupom</h4>
-              <button
-                onClick={() => setShowModalCupom(true)}
-                className={`${styles.btnCupom}`}
-                aria-label='Inserir cupom'
-              >
-                <HiOutlineTicket size={18} />
-                Inserir cupom
-              </button>
-
               {isLoggedIn ? (
                 <>
+                  <h4>Cupom</h4>
+                  <button
+                    onClick={() => setShowModalCupom(true)}
+                    className={`${styles.btnCupom}`}
+                    aria-label='Inserir cupom'
+                  >
+                    <HiOutlineTicket size={18} />
+                    Inserir cupom
+                  </button>
                   <hr />
                   <div className={styles.shippingContainer}>
                     <div className={styles.shippingInfo}>
@@ -155,8 +157,9 @@ const Cart: NextPage<{ isLoggedIn: boolean; userAddress: IAddress }> = ({
                         </Link>
                       </div>
                       <p>
-                        {userAddress.street}, {userAddress.number} <br />
-                        {userAddress.additional}, {userAddress.district}, {userAddress.city}
+                        {userAddress?.street}, {userAddress?.number} <br />
+                        {userAddress?.additional}, {userAddress?.district},{' '}
+                        {userAddress?.city}
                       </p>
                     </div>
                     <div className={styles.paymentContainer}>
@@ -202,14 +205,29 @@ const Cart: NextPage<{ isLoggedIn: boolean; userAddress: IAddress }> = ({
                     </div>
                   </div>
                   <hr />
-                  <Button
-                    disabled={!paymentMethod || isLoading}
-                    type='button'
-                    onClick={handleSubmit}
-                    aria-label='Enviar pedido'
-                  >
-                    {!isLoading ? 'Enviar pedido' : <ThreeDots height={9} />}
-                  </Button>
+
+                  {isOpen ? (
+                    <Button
+                      disabled={!paymentMethod || isLoading}
+                      type='button'
+                      onClick={handleSubmit}
+                      aria-label='Enviar pedido'
+                    >
+                      {!isLoading ? 'Enviar pedido' : <ThreeDots height={9} />}
+                    </Button>
+                  ) : (
+                    <div className={styles.businessClosed}>
+                      <h3 className={globalStyles.center}>
+                        Estamos fechados no momento
+                      </h3>
+                      <p className={globalStyles.center}>
+                        
+                        <Link href='/about'>
+                          <a> Consulte nosso horário de funcionamento</a>
+                        </Link>
+                      </p>
+                    </div>
+                  )}
                 </>
               ) : (
                 <>
@@ -248,7 +266,7 @@ export default Cart;
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   let isLoggedIn = false;
-  let userAddress;
+  let userAddress = null;
   const jwt = ctx?.req?.cookies?.GulaGulaJwt;
 
   if (jwt) {

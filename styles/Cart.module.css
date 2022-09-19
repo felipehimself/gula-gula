@@ -72,3 +72,13 @@
 .shippingInfo a:hover {
   text-decoration: underline;
 }
+
+.businessClosed {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.businessClosed a {
+  text-decoration: underline;
+}

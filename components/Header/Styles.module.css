@@ -1,0 +1,31 @@
+.header {
+  background-color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--greyLighter);
+  position: fixed;
+  width: 100%;
+  z-index: 20;
+  min-height: 6rem;
+}
+
+.headerContainer {
+  width: min(80rem, 100%);
+  margin: 0 auto;
+  padding-left: var(--paddingContainer);
+  padding-right: var(--paddingContainer);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerContainer h1 {
+  color: var(--white);
+  letter-spacing: 0.1rem;
+}
+
+
+.button {
+  cursor: pointer;
+}

@@ -1,0 +1,74 @@
+.innerContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.spacing {
+  padding-top: 4rem;
+  padding-bottom: 8rem;
+}
+
+.btnCupom {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  background: var(--white);
+  padding: 1.4rem 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  border: none;
+  text-decoration: underline;
+  font-size: var(--font-medium);
+  color: var(--black);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  margin-bottom: 2rem;
+}
+
+.emptyCartInfo {
+  padding: 3rem 0;
+}
+
+.shippingContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.paymentContainer h4 {
+  margin-bottom: 1rem;
+}
+
+.paymentContainer label {
+  font-size: var(--font-small);
+  min-width: 8rem;
+  text-transform: capitalize;
+}
+
+.paymentContainer label:not(:last-child){
+  margin-bottom: 0.5rem;
+}
+
+.paymentContainer input {
+  transform: scale(1.3);
+  accent-color: var(--black);
+}
+
+.paymentContainer div p {
+  margin-bottom: 0.5rem;
+}
+
+.shippingInfo h4 {
+  margin-bottom: 1rem;
+}
+
+.shippingInfo a:hover {
+  text-decoration: underline;
+}

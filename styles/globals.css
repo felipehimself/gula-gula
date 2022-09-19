@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500&display=swap');
+
+:root {
+  --greyLighter: #f3f5f7;
+  --greyLight: #e7eaed;
+  --greyDark: #485460;
+  --greyDarker: #30333c;
+  --blueDark: #30475E;
+  --black: #121212;
+  --green: #00a976;
+  --white: #fff;
+  --red: #F05454;
+
+  --font-sx-small: 1.4rem;
+  --font-small: 1.5rem;
+  --font-medium: 1.6rem;
+  --font-large: 1.8rem;
+
+
+  --paddingContainer: 1rem;
+}
+
+@media screen and (min-width: 840px) {
+  :root {
+    --paddingContainer: 0;
+  }
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html,
+body {
+  font-family: 'Work Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--greyDarker);
+
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button,
+textarea,
+select,
+option,
+input {
+  font-family: inherit;
+  font-size: var(--font-medium);
+  color: var(--greyDark);
+}
+
+a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+h4 {
+  font-size: var(--font-small);
+  color: var(--blueDark);
+
+}
+
+h3 {
+  font-size: var(--font-medium);
+  color: var(--blueDark);
+}
+h2 {
+  font-size: var(--font-large);
+  color: var(--blueDark);
+}
+
+
+p,
+a,
+li,
+span {
+  font-size: var(--font-small);
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+hr {
+  background-color: var(--greyLight);
+  height: 1px;
+  border: 0;
+}

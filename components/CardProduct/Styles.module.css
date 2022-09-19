@@ -1,0 +1,22 @@
+.article {
+  display: flex;
+  gap: 3rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 1rem;
+  cursor: pointer;
+  border-bottom: 1px solid var(--greyLight);
+  transition: background 0.3s ease-in-out;
+
+}
+
+.article:hover {
+    background: #faf9f6;
+}
+
+.descriptionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem
+}
+

@@ -1,0 +1,133 @@
+.infoContainer {
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.optionCard {
+  padding: 1.6rem 0;
+  border-bottom: 1px solid var(--greyLight);
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.optionText {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.checkBox {
+  transform: scale(1.4);
+  accent-color: var(--black);
+}
+
+.textArea {
+  padding: 1rem;
+  margin-bottom: 6rem;
+  width: 100%;
+  height: 10rem;
+  resize: none;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+
+.textArea:focus {
+  outline: none;
+}
+
+.bottomTab {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: var(--white);
+  z-index: 20;
+  box-shadow: 1px -3px 13px -3px rgba(0, 0, 0, 0.3);
+}
+
+.bottonContainer {
+  width: min(80rem, 100%);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.6rem;
+}
+
+.button {
+  background: var(--greyLight);
+  border: none;
+  padding: 1rem;
+  border-radius: 5px;
+  font-size: var(--font-sx-small);
+  display: flex;
+  flex: 1 1;
+  align-items: center;
+  gap: 1rem;
+  color: var(--greyDarker);
+}
+
+.buttonActive {
+  border: none;
+  padding: 1rem;
+  border-radius: 5px;
+  font-size: var(--font-sx-small);
+  display: flex;
+  flex: 1 1;
+  align-items: center;
+  gap: 1rem;
+  background: var(--black);
+  color: var(--white);
+}
+
+
+.buttonAdd {
+  background: var(--greyLight);
+  border: none;
+  padding: 1rem;
+  border-radius: 5px;
+  font-size: var(--font-sx-small);
+  display: flex;
+  flex: 1 1;
+  align-items: center;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  gap: 1rem;
+  color: var(--greyDarker);
+}
+
+.buttonAddActive {
+  border: none;
+  padding: 1rem;
+  border-radius: 5px;
+  font-size: var(--font-sx-small);
+  display: flex;
+  flex: 1 1;
+  align-items: center;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  gap: 1rem;
+  background: var(--black);
+  color: var(--white);
+}
+
+.quantity {
+  min-width: 2.4rem;
+  text-align: center;
+}
+
+.total {
+  min-width: 8rem;
+  text-align: end;
+  align-self: flex-end;
+}
+
+.sectionTitle {
+  font-size: var(--font-medium);
+  background: var(--greyLight);
+  color: var(--greyDark);
+  padding: 1rem;
+}

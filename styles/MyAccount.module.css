@@ -1,0 +1,93 @@
+.innerContainer {
+  margin-top: 2rem;
+}
+
+.innerContainer p {
+  margin-top: 0.2rem;
+}
+
+.tabContainer {
+  display: flex;
+  justify-content: space-evenly ;
+  width: min(80rem, 100%);
+  margin: 0 auto;
+  padding: var( --paddingContainer);
+}
+
+.tabContainer button {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 1rem;
+  font-weight: 600;
+  border-bottom: 1px solid var(--greyLight);
+  font-size: var(--font-small);
+}
+
+.tabContainer button.active {
+  border-bottom: 1.8px solid var(--greyDark);
+
+}
+
+.addressContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.infoContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.editBtn {
+  text-decoration: underline;
+  text-decoration-color: var(--black);
+  font-weight: 500;
+  font-size: var(--font-small);
+}
+
+.ordersContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-bottom: 12rem;
+  
+}
+
+.dateContainer {
+  padding: 1rem 0rem;
+  border-bottom: 1px solid var(--greyDark);
+  border-top: 1px solid var(--greyDark);
+
+  color: var(--greyDarker);
+}
+
+.totalOrderContainer {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.totalOrderContainer h4 ~ p {
+  text-transform: capitalize;
+}
+
+@media only screen and (max-width: 720px) {
+  .addressContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .infoContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .infoContainer div:nth-child(2) {
+    grid-row: 2 / 3;
+  }
+
+  .infoContainer div:nth-child(3) {
+    justify-self: end;
+  }
+}

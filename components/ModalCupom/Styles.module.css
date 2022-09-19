@@ -1,0 +1,41 @@
+.modal {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  
+}
+
+.modalContent {
+  padding: 2rem;
+  width: min(80rem, 100%);
+  margin: 0 auto;
+  background: var(--white);
+  border-top-left-radius: 2.4rem;
+  border-top-right-radius: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input {
+  padding: 1rem;
+  border-radius: 0.7rem;
+  border: 1px solid rgba(0,0,0, 0.3);
+}
+
+.input:focus {
+  outline: none;
+}
+
+.error {
+  font-size: 1.4rem;
+  color: rgb(250, 52, 52);
+  min-height: 2rem;
+}
+

@@ -1,0 +1,26 @@
+.innerContainer {
+  padding: 1.4rem 0;
+  padding-left: var(--paddingContainer);
+  padding-right: var(--paddingContainer);
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  width: min(80rem, 100%);
+  border-bottom: 1px solid var(--greyLight);
+  z-index: 100;
+  background: var(--white);
+}
+
+.button {
+  color: var(--black);
+  font-size: var(--font-small);
+  border: none;
+  background-color: transparent;
+}
+
+.title {
+  width: calc(100% - 4rem);
+  text-align: center;
+  font-size: var(--font-small);
+  color: var(--greyDarker);
+}

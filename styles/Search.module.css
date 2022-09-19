@@ -1,0 +1,50 @@
+.innerContainer {
+  width: min(80rem, 100%);
+  margin: 0 auto;
+  padding: 1.4rem 0;
+  padding-left: var(--paddingContainer);
+  padding-right: var(--paddingContainer);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid var(--greyLight);
+}
+
+.backButton {
+  color: var(--black);
+  border: none;
+  background-color: transparent;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+}
+
+.inputContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--greyDark);
+  border-radius: 0.4rem;
+  padding: 0 1rem;
+}
+
+.input {
+  width: 100%;
+  border: none;
+  padding: 0.8rem 1rem;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.searchContainer {
+  margin-top: 8rem;
+}
+
+.searchMessage {
+  margin-top: 12rem;
+}

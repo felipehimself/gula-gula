@@ -1,0 +1,53 @@
+.container {
+  position: fixed;
+  bottom: 5.3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(80rem, 100%);
+  cursor: pointer;
+}
+
+.innerContainer {
+  background: var(--black);
+  border-top-left-radius: 0.6rem;
+  border-top-right-radius: 0.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--white);
+  padding: 1.4rem 2rem;
+  position: relative;
+}
+
+.innerContainer > * {
+  color: var(--white);
+}
+
+.quantityContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.quantityContainer::after {
+  content: attr(data-quantity);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -2.2rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  background-color: aliceblue;
+  border-radius: 100%;
+  color: var(--black);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.4rem;
+}
+
+.centerText {
+  margin-right: -3rem;
+}

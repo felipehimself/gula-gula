@@ -1,0 +1,26 @@
+.btn {
+  display: block;
+  width: 100%;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border: 1px solid var(--black);
+  padding: 1.2rem 2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.btnFlat {
+  color: var(--black);
+  background: transparent;
+}
+
+.btnFilled {
+  color: var(--white);
+  background: var(--black);
+}
+
+.btnFilled.dissabled {
+  background: var(--greyDarker);
+  border-color: var(--greyDarker);
+  color: var(--white);
+}

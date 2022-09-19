@@ -1,0 +1,126 @@
+.main {
+  padding-top: 8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: min(80rem, 100%);
+  margin: 0 auto;
+  padding-left: var(--paddingContainer);
+  padding-right: var(--paddingContainer);
+}
+
+.mainActive {
+  padding-top: 18rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.title {
+  color: var(--greyDarker);
+  display: flex;
+  align-items: center;
+  font-size: var(--font-medium);
+}
+
+.isBusinessOpen {
+  cursor: pointer;
+  color: var(--white);
+  padding: 0.5rem 2rem;
+  box-shadow: rgb(232 234 237) 0px 2px 4px;
+  text-align: center;
+  min-width: 11rem;
+}
+
+.isBusinessOpen.open {
+  background: var(--green);
+}
+
+
+.isBusinessOpen.closed {
+  background: var(--red);
+}
+
+.deliveryInfoContainer {
+  background: #f3f5f7;
+  width: min(80rem, 100%);
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  --mask: radial-gradient(14px at 50% 14px, #0000 97%, #000) 50% -14px/ 25.9px
+    100%;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+}
+.deliveryInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border: 1px dashed var(--greyDark);
+  padding: 1rem;
+}
+
+.nav {
+  padding: 1rem 0;
+  z-index: 10;
+  width: min(80rem, 100%);
+  background: var(--white);
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.navActive {
+  position: fixed;
+  top: 6rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.list {
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.listItem {
+  flex: 1;
+}
+
+.navLink {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 4px 1rem;
+  background: var(--black);
+  border: 1px solid var(--black);
+  cursor: pointer;
+  font-size: var(--font-small);
+  color: var(--white);
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.active {
+  background: var(--white);
+  color: var(--black);
+}
+
+.selectMenu {
+  width: 100%;
+  padding: 0.6rem;
+}
+.itensContainer {
+  transition: margin-top 0.5s ease;
+  padding-bottom: 10rem;
+}
+
+.itemTitle {
+  font-size: var(--font-medium);
+  background: var(--greyLight);
+  color: var(--greyDark);
+  padding: 1rem;
+}

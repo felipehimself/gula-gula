@@ -266,6 +266,16 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
         }
       }
   ])
+  if ((product.length === 0 || !product)) {
+    return {
+      redirect: {
+        permanent: false,
+        destination: "/",
+      },
+      props:{},
+    };
+
+  }
 
   const resProduct = JSON.parse(JSON.stringify(product))[0]
   
